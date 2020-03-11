@@ -1,0 +1,418 @@
+<html>
+
+<head>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script>
+        onload = start;
+
+        function start() {
+            var i = 1;
+
+            function Move() {
+                i = (i % 7) + 1; // 5 is the Number of image in slider
+                document.getElementById('id' + i).checked = true;
+            }
+            setInterval(Move, 4000); //change img in 3 sec
+        }
+    </script>
+    <style>
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow-X: hidden;
+
+        }
+
+        #id1,
+        #id2,
+        #id3,
+        #id4,
+        #id5,
+        #id6,
+        #id7 {
+            display: none;
+        }
+
+        .container {
+            margin: 20 auto;
+
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /*s            user-select: none;
+            background-color: #1c1c1c;
+/*
+            border: solid 10px #616161;
+            border-radius: 10px;
+*/
+        }
+
+        .container .slide_img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .container .slide_img img {
+            width: inherit;
+            height: inherit;
+        }
+
+        .prev,
+        .next {
+            width: 12%;
+            height: inherit;
+            position: absolute;
+            top: 0;
+            background-color: rgba(0, 0, 0, .05);
+            color: white;
+            z-index: 99;
+            transition: .45s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+
+        label i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .fa {
+            font-size: 60px;
+
+        }
+
+        .prev:hover,
+        .next:hover {
+            transition: .3s;
+            background-color: rgba(88, 88, 88, .8);
+            color: #ffffff;
+        }
+
+        .container #nav_slide {
+            width: 100%;
+            bottom: 12%;
+            height: 11px;
+            position: absolute;
+            text-align: center;
+            z-index: 99;
+            cursor: default;
+        }
+
+        #nav_slide .dots {
+            width: 18px;
+            height: 18px;
+            margin: 0 4px;
+            position: relative;
+            border-radius: 100%;
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.6);
+            transition: .4s;
+        }
+
+        #nav_slide .dots:hover {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: .25s
+        }
+
+        .slide_img {
+            z-index: -1;
+        }
+
+        #id1:checked~#one,
+        #id2:checked~#two,
+        #id3:checked~#three,
+        #id4:checked~#four,
+        #id5:checked~#five,
+        #id6:checked~#six,
+        #id7:checked~#seven {
+            z-index: 9;
+
+        }
+
+        #id1:checked~#nav_slide #dot1,
+        #id2:checked~#nav_slide #dot2,
+        #id3:checked~#nav_slide #dot3,
+        #id4:checked~#nav_slide #dot4,
+        #id5:checked~#nav_slide #dot5,
+        #id6:checked~#nav_slide #dot6,
+        #id7:checked~#nav_slide #dot7 {
+            background-color: rgba(255, 255, 255, .9);
+        }
+
+        @media screen and (max-width: 685px) {
+            .container {
+                border: none;
+                width: 100%;
+                height: 0;
+                padding-bottom: 55%;
+            }
+
+            label span {
+                font-size: 50pt;
+            }
+
+            .prev,
+            .next {
+                width: 15%;
+            }
+
+            #nav_slide .dots {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .header {
+            height: 100px;
+            background: rgba(0, .5, .5, .5);
+            padding: 0 20px;
+            color: #fff;
+            /*
+            position: -webkit-sticky;
+            position: sticky;
+*/
+        }
+
+        h2 {
+            line-height: 100px;
+            float: left;
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+
+        .menu {
+            float: right;
+            line-height: 100px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 0 10px;
+            transition: 0.4s;
+        }
+
+        .show-menu-btn,
+        .hide-menu-btn {
+            transition: 0.4s;
+            font-size: 30px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .show-menu-btn {
+            float: right;
+        }
+
+        .show-menu-btn i {
+            line-height: 100px;
+        }
+
+        .menu a:hover,
+        .show-menu-btn:hover,
+        .hide-menu-btn:hover {
+            color: #3498db;
+        }
+
+        #chk {
+            position: absolute;
+            visibility: hidden;
+            z-index: -111;
+        }
+
+        @media screen and (max-width:800px) {
+
+            .show-menu-btn,
+            .hide-menu-btn {
+                display: block;
+            }
+
+            .menu {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: #333;
+                right: -100%;
+                top: 0;
+                text-align: center;
+                padding: 80px 0;
+                line-height: normal;
+                transition: 0.7s;
+            }
+
+            .menu a {
+                display: block;
+                padding: 20px;
+            }
+
+            .hide-menu-btn {
+                position: absolute;
+                top: 40px;
+                right: 40px;
+            }
+
+            #chk:checked~.menu {
+                right: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <h2 align="center" style="font-size: 26px; font-weight:normal;">OnRoad Vehicle
+                Breakdown Assistance Finder</h2>
+
+            <input type="checkbox" id="chk">
+
+
+            <!--
+       <label for="chk" class="show-menu-btn">
+            <i class="fas fa-ellipsis-h"></i>
+        </label>
+       
+-->
+            <ul class="menu">
+                <a href="homeonroad.html">HOME</a>
+               
+                
+                <a href="aboutusOnroad.html">ABOUT US</a>
+                <a href="onroadhelp.html">HELP</a>
+                
+                <!--
+
+      <label for="chk" class="hide-menu-btn">
+                <i class="fas fa-times"></i>
+            </label>
+       
+-->
+
+
+
+            </ul>
+
+        </div>
+        <!--    <hr>-->
+
+        <input type="radio" id="id1" name="images" checked />
+        <input type="radio" id="id2" name="images" />
+        <input type="radio" id="id3" name="images" />
+        <input type="radio" id="id4" name="images" />
+        <input type="radio" id="id5" name="images" />
+        <input type="radio" id="id6" name="images" />
+        <input type="radio" id="id7" name="images" />
+
+        <div class="slide_img" id="one">
+
+            <img src="cars/unnamed(1).jpg">
+
+            <label class="prev" for="id7"><i class="fa fa-caret-left"></i>
+            </label>
+            <label class="next" for="id2"><i class="fa fa-caret-right"></i>
+            </label>
+
+        </div>
+
+        <div class="slide_img" id="two">
+
+            <img src="cars/unnamed(2).jpg">
+
+            <label class="prev" for="id1"><i class="fa fa-caret-left"></i>
+            </label>
+            <label class="next" for="id3"><i class="fa fa-caret-right"></i>
+            </label>
+
+        </div>
+
+        <div class="slide_img" id="three">
+            <img src="cars/unnamed(3).jpg">
+            <label class="prev" for="id2"><i class="fa fa-caret-left"></i>
+            </label>
+            <label class="next" for="id4"><i class="fa fa-caret-right"></i>
+            </label>
+        </div>
+
+        <div class="slide_img" id="four">
+            <img src="cars/unnamed(4).jpg">
+            <label class="prev" for="id3"><i class="fa fa-caret-left"></i>
+            </label>
+            <label class="next" for="id5"><i class="fa fa-caret-right"></i>
+            </label>
+        </div>
+
+        <div class="slide_img" id="five">
+            <img src="cars/unnamed(5).jpg">
+            <label class="prev" for="id4"><i class="fa fa-caret-left"></i>
+            </label>
+            <label class="next" for="id6"><i class="fa fa-caret-right"></i>
+            </label>
+        </div>
+
+        <div class="slide_img" id="six">
+            <img src="cars/unnamed(6).jpg">
+            <label class="prev" for="id5"><i class="fa fa-caret-left"></i>
+            </label>
+            <label class="next" for="id7"><i class="fa fa-caret-right"></i>
+            </label>
+        </div>
+
+        <div class="slide_img" id="seven">
+            <img src="cars/unnamed(7).jpg">
+            <label class="prev" for="id6"><i class="fa fa-caret-left"></i>
+            </label>
+            <label class="next" for="id1"><i class="fa fa-caret-right"></i>
+            </label>
+
+
+        </div>
+
+        <div id="nav_slide">
+            <label for="id1" class="dots" id="dot1"></label>
+            <label for="id2" class="dots" id="dot2"></label>
+            <label for="id3" class="dots" id="dot3"></label>
+            <label for="id4" class="dots" id="dot4"></label>
+            <label for="id5" class="dots" id="dot5"></label>
+            <label for="id6" class="dots" id="dot6"></label>
+            <label for="id7" class="dots" id="dot7"></label>
+        </div>
+
+    </div>
+
+</body></html>
