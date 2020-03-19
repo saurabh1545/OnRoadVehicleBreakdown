@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up page</title>
+    <style>
+        
+    body{
+    padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+        background-color: aliceblue;
+        background-size: cover;
+        background-position: center
+    }
+        
+        .sign-up{
+            width: 300px;
+            box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+            background: #fff;
+            padding: 20px;
+            text-align: center;
+            margin: 8% auto;
+        }   
+        
+        .sign-up h1{
+            color: #1c8adb;
+            margin-bottom: 30px;
+            
+        }
+        
+        .input-box{
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+            border: 1px solid #999;
+            outline: none;
+        }
+        
+        button{
+            color: #fff;
+             border-radius: 20px;
+            padding: 10px;
+            margin: 10px;
+            width: 100%;
+            font-size: 15px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            
+        }
+        
+        .sign-btn{
+            background-color: #1c8adb;
+        }
+        a{
+            text-decoration: none;
+        }
+/*
+        img{
+            width: 70px;
+            margin-top: -20px;
+        }
+        
+*/
+       
+    </style>
+    
+</head>
+
+<body>
+    
+    <div class="sign-up">
+<!--        <img src="icon.jpg">-->
+        <h1>Enter your details!</h1>
+        <form >
+            
+<!--
+            <input type="text" class="input-box" placeholder="enter name" required>
+           
+        
+            <input type="email" class="input-box" placeholder="enter e-mail " required>
+            
+            
+            <input type="password" class="input-box" placeholder="password" required>
+            
+-->
+            
+
+<!--            <p><span><input type="checkbox"></span>I agree to the terms of services</p>-->
+            <button type="button" onClick="parent.location='onroadnewuser.html'" class="sign-btn">New User</button>
+             <button type="button" onClick="parent.location='onroadmechanic.html'" class="sign-btn">Mechanic</button>
+              <button type="button" onClick="parent.location='onroadadminlogin.html'" class="sign-btn">Admin</button>
+            
+<!--             <a href="login2.html" style="margin-left: 140px margin-top:10px"> BACK</a>-->
+        </form> 
+        
+        
+    </div>
+    
+</body>
+</html>
