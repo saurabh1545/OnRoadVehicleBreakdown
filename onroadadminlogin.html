@@ -1,0 +1,104 @@
+<style></style>
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-image: url("cars/191531.jpg");
+            background-size: cover;
+            font-family: sans-serif;
+            background-repeat: no-repeat;
+        }
+        .box{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            background: rgba(0,0,0,.5);
+            width: 400px;
+            padding: 40px;
+            box-sizing: border-box;
+            border-radius: 20px;
+            box-shadow: 0 15px 15px rgba(0,0,0,.5);
+                
+        }
+        h2{
+            text-align: center;
+            margin: 0 0 30px;
+            padding: 0px;
+            color: white;
+            
+        }
+        .box .inputbox{
+            position: relative;
+        }
+        .box .inputbox input{
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: white;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            background: transparent;
+            border-bottom: 1px solid white;
+        }
+        .box .inputbox label{
+            position: absolute;
+            top:0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            pointer-events: none;
+            transition: .5s;
+            color: white;
+            
+        }
+        .box .inputbox input:focus~label,
+        .box .inputbox input:valid~label{
+            top: -20px;
+            left: 0;
+            color: deepskyblue;
+            font-size: 12px;
+        }
+        .box input[type="submit"]{
+            margin-top: 10px;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            background: deepskyblue;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Admin</h2>
+        <form action="onroadadmin.html">
+            <div class="inputbox">
+                <input type="text" required>
+                <label>username</label>
+            </div>
+            <div class="inputbox">
+                <input type="password" required>
+                <label>password</label>
+            </div>
+            <input type="submit" value="Login">
+<!--            <a href="signup1.html" style="margin-left: 120px;color:aqua" >NEW USER?</a>-->
+        </form>
+    </div>
+</body>
+<!--title projectmemebers requirements-->
+</html>
