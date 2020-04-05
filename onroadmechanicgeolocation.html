@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lattitude and longitude</title>
+		<style>
+			.gfg {
+				font-size:40px;
+				font-weight:bold;
+				color:#009900;
+				margin-left:50px;
+			}
+			.geeks {
+				margin-left:150px;
+			}
+			p {
+				font-size:20px;
+				margin-left:20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class = "gfg"> Here mechanic can find his location</div>
+		<p> Here we are displaying you your location using Latitude and Longitude</p>
+		<button class = "geeks" style="margin-left: 220px; margin-top:10px; background-color: aquamarine; border-radius: 8px; width: 200px; height: 50px;" onclick="getlocation()">Find Location</button>
+		<p id="demo1"></p>
+		<script>
+		var variable1 = document.getElementById("demo1");
+		function getlocation(){
+				navigator.geolocation.getCurrentPosition(showLoc);
+		}
+		function showLoc(pos){
+				variable1.innerHTML = "Latitude: " + pos.coords.latitude +
+				"<br>Longitude: " + pos.coords.longitude;
+			}
+		</script>
+		
+		<button type="button" style="margin-left: 220px; margin-top:10px; background-color: aquamarine; border-radius: 8px; width: 200px; height: 50px;" onClick="parent.location='onroadmechanic.html'">Upload</button>
+	</body>
+</html>
